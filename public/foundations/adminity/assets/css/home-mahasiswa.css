@@ -1,0 +1,113 @@
+/* new style */
+#home-mahasiswa .card{
+    border-radius: 15px 0 15px 0;
+}
+
+#home-mahasiswa .card .card-header{
+    border-bottom: none;
+    padding: 10px 20px;
+    background-color: #E75101;
+    margin-bottom: 1.25rem;
+    border-radius: 15px 0 0 0;
+}
+
+#home-mahasiswa .card .card-header h2{
+    color: white;
+    font-weight: 600;
+}
+
+#home-mahasiswa .card .card-header h5{
+    color: white;
+    font-weight: 600;
+}
+
+#home-mahasiswa .card .card-block{
+    border-radius: 15px 0 15px 0;
+}
+
+#home-mahasiswa .card .card-block .img{
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+#home-mahasiswa .card .card-block .img img{
+    width: 100px;
+}
+
+#home-mahasiswa .card .card-block .btn{
+    background-color: #E75101;
+    border-radius: 15px 0 15px 0;
+}
+
+#home-mahasiswa .card .card-block .btn:hover{
+    background-color: rgb(202, 73, 4);
+    border-radius: 15px 0 15px 0;
+}
+
+#home-mahasiswa .card .card-block .btn a h6{
+    color: #ffffff;
+    margin-bottom: 0;
+}
+
+#home-mahasiswa .card .card-block .head{
+    display: flex;
+    align-items: center;
+    color: #333333;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 15px 0;
+}
+
+#home-mahasiswa .card .card-block .head img{
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+#home-mahasiswa .card .card-block .head h6{
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+#home-mahasiswa .card .card-block .list .list-wrapper{
+    list-style: none;
+    padding-left: 15px;
+}
+
+#home-mahasiswa .card .card-block .list .list-link{
+    color: #333333;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-left: 3px solid #ffffff;
+}
+
+#home-mahasiswa .card .card-block .list .list-link:hover{
+    color: #333333;
+    border-left: 3px solid #E75101;
+}
+
+#home-mahasiswa .accordion-msg{
+    font-weight: unset;
+    font-size: 12px;
+    border-top: none;
+    color: white;
+    background-color: #E75101;
+    display: flex;
+    align-items: center;
+}
+
+#home-mahasiswa .accordion-desc{
+    padding-top: 14px;
+}
+
+#home-mahasiswa .accordion-title .collapsed{
+    border-bottom: none!important;
+    background-color: white;
+    color: #333333;
+    display: flex;
+    align-items: center;
+}
+
+#home .accordion-msg i{
+    padding-right: 10px;
+}

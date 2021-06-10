@@ -1,0 +1,261 @@
+/* new style */
+#riwayat-pengki .card{
+    border-radius: 15px 0 15px 0;
+}
+
+#riwayat-pengki .card .mahasiswa{
+    border-bottom: none;
+    padding: 10px 20px;
+    background-color: #E75101;
+    margin-bottom: 1.25rem;
+    border-radius: 15px 0 0 0;
+}
+
+#riwayat-pengki .card .mahasiswa h2{
+    color: white;
+    font-weight: 600;
+}
+
+#riwayat-pengki .card .mahasiswa h5{
+    color: white;
+    font-weight: 600;
+}
+
+#riwayat-pengki .card .semester{
+    border-bottom: none;
+    padding: 10px 20px;
+    background-color: #E75101;
+    margin-bottom: 1.25rem;
+    border-radius: 0 15px 0 0;
+}
+
+#riwayat-pengki .card .semester h2{
+    color: white;
+    font-weight: 600;
+}
+
+#riwayat-pengki .card .semester h5{
+    color: white;
+    font-weight: 600;
+}
+
+#riwayat-pengki .badge {
+    border-radius: 10px;
+    padding: 3px 7px
+    
+}
+
+#riwayat-pengki .badge .b-none {
+    font-size: 20px;
+}
+
+
+
+#riwayat-pengki .card .batas{
+    border-bottom: none;
+    padding: 10px 20px;
+    background-color: #E75101;
+    margin-bottom: 1.25rem;
+    border-radius: 15px 15px 0 0;
+}
+
+#riwayat-pengki .card .batas h2{
+    color: white;
+    font-weight: 600;
+}
+
+#riwayat-pengki .card .batas h5{
+    color: white;
+    font-weight: 600;
+}
+
+#riwayat-pengki .card .card-block{
+    border-radius: 15px 0 0 0;
+}
+
+#riwayat-pengki .card .card-block .img{
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+#riwayat-pengki .card .card-block .img img{
+    width: 100px;
+}
+
+#riwayat-pengki .card .card-block .btn{
+    background-color: #E75101;
+    border-radius: 15px 0 15px 0;
+}
+
+#riwayat-pengki .card .card-block .btn:hover{
+    background-color: rgb(202, 73, 4);
+    border-radius: 15px 0 15px 0;
+}
+
+#riwayat-pengki .card .card-block .btn a h6{
+    color: #ffffff;
+    margin-bottom: 0;
+}
+
+#riwayat-pengki .card .card-block .head{
+    display: flex;
+    align-items: center;
+    color: white;
+    background-color: #E75101;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+    padding-left: 25px;
+    border-radius: 15px 0;
+}
+
+#riwayat-pengki .card .card-block .head img{
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+#riwayat-pengki .card .card-block .head h6{
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+#riwayat-pengki .card .card-block .list .list-wrapper{
+    list-style: none;
+    padding-left: 15px;
+}
+
+#riwayat-pengki .card .card-block .list .list-link{
+    color: #333333;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-left: 3px solid #ffffff;
+}
+
+#riwayat-pengki .card .card-block .list .list-link:hover{
+    color: #333333;
+    border-left: 3px solid #E75101;
+}
+
+#riwayat-pengki .accordion-msg{
+    font-weight: unset;
+    font-size: 12px;
+    border-top: none;
+    color: white;
+    background-color: #E75101;
+    display: flex;
+    align-items: center;
+}
+
+#riwayat-pengki .accordion-desc{
+    padding-top: 14px;
+}
+
+#riwayat-pengki .accordion-title .collapsed{
+    border-bottom: none!important;
+    background-color: white;
+    color: #333333;
+    display: flex;
+    align-items: center;
+}
+
+#riwayat-pengki .accordion-msg i{
+    padding-right: 10px;
+}
+
+#riwayat-pengki .m-b-0{
+    margin-bottom: 0px !important;
+}
+
+#riwayat-pengki .btn {
+    padding: 9px 19px;
+    color: white;
+}
+
+#riwayat-pengki .form-control:focus{
+    border: 1px solid #E75101;
+}
+
+#riwayat-pengki .card-block{
+    padding: 5px 20px;
+}
+
+#riwayat-pengki .full-height-card{
+    height: calc(100% - 30px);
+}
+
+@media only screen and (max-width: 480px){
+    #riwayat-pengki  .btn{
+        border-radius: 0 0 15px 15px !important;
+    }
+}
+
+/* tabel */
+.table th {
+    background-color: #E75101;
+    padding: 5px;
+    font-size: 12px;
+    color: #ffffff;
+    margin-bottom: 0px;
+    vertical-align: middle;
+    border: 1px solid #e9ecef;
+    text-align: center;
+}
+.table td{
+    text-align: left;
+    border: 1px solid #e9ecef;
+    white-space: normal;
+}
+.tbl1 {
+    font-size: 12px;
+    color: #5d4037 !important;
+    background-color: #ffcc80 !important;
+    padding: 4px !important;
+}
+.tbl2 {
+    font-size: 12px;
+    color: #5d4037 !important;
+    background-color: #ffe0b2 !important;
+    padding: 4px !important;
+}
+.tbl-aktif {
+    font-size: 12px;
+    color: #5d4037 !important;
+    background-color: #00d900 !important;
+    padding: 4px !important;
+}
+.tbl-non-aktif {
+    font-size: 12px;
+    color: #ffffff !important;
+    background-color: red !important;
+    padding: 4px !important;
+}
+.tbl-terdaftar {
+    font-size: 12px;
+    color: #5d4037 !important;
+    background-color: #ffffff !important;
+    padding: 4px !important;
+}
+
+/* button */
+.w-100{
+    width : 100%;
+}
+.btn{
+    padding: 8px 14px;
+    line-height: 16px;
+    font-size: 11px;
+    background-color: #E75101 !important;
+    border-color: #E75101 !important;
+    color: #ffffff;
+    border-radius: 2px;
+}
+.btn:hover{
+    background-color: rgb(202, 73, 4);
+    color: #ffffff;
+}
+.btn-tab{
+    background-color: #ffffff;
+    box-shadow:0 1px 20px 0 rgba(69, 90, 100, 0.08);
+}
+
