@@ -9,12 +9,12 @@ const csrf = require('csurf');
 const helmet = require('helmet');
 const compression = require('compression')
 
-const errorController = require('./controllers/error');
 const mainRoutes = require('./routes/main');
-const pmbFormRoutes = require('./routes/pmbForm');
 const axiosRoutes = require('./routes/axios');
-// const authRoutes = require('./routes/auth');
-// const User = require('./models/user');
+const pmbFormRoutes = require('./routes/pmbForm');
+const periodeRoutes = require('./routes/periode');
+const komponenUSMRoutes = require('./routes/komponenUSM');
+const opmbRoutes = require('./routes/opmb');
 
 const PORT = 3000;
 // const MONGODB_URI = process.env.dbURL;
@@ -74,12 +74,21 @@ app.use(express.static(path.join(__dirname, './public')));
 //         });
 // });
 
-// route tabel simak_mst_pmb_formulir
-app.use(pmbFormRoutes);
-
 // route hal. home
 app.use(mainRoutes);
 app.use(axiosRoutes);
+
+// route tabel simak_mst_pmb_formulir
+app.use(pmbFormRoutes);
+
+// route tabel simak_mst_pmb_gelombang
+app.use(periodeRoutes);
+
+// route tabel simak_mst_pmb_usm
+app.use(komponenUSMRoutes)
+
+// route tabel simak_mst_pmb_opmb
+app.use(opmbRoutes)
 
 // app.get('/500', errorController.get500);
 

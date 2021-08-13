@@ -28,6 +28,8 @@ controller.postLoginUser = function (token) {
     return response;
 }
 
+
+// Formulir API
 controller.getAllFormulir = function (username, token, page) {
     const response = axios({
         method: 'get',
@@ -103,4 +105,117 @@ controller.deleteFormulir = function (username, token, id) {
     }).then((response) => response.data);
     return response;
 }
+// End Formulir API
+
+
+// Periode API
+controller.getAllPeriode = function (username, token, page) {
+    const response = axios({
+        method: 'get',
+        url: `https://prototipe.unpas.ac.id/situ/api/public/api-v1/modul/pmb/mst-pmb/gelombang?page=${page}`,
+        headers: {
+            username: username,
+            token: token
+        }
+    }).then((response) => response.data);
+    return response;
+}
+
+controller.addPeriode = function (username, token, data) {
+    const response = axios({
+        method: 'post',
+        url: 'https://prototipe.unpas.ac.id/situ/api/public/api-v1/modul/pmb/mst-pmb/gelombang',
+        data: {
+            PMBPeriodID: data['kodeP'],
+            KodeID: 'demo',
+            Nama: data['namaP'],
+            TglMulai: data['tglMulai'],
+            TglSelesai: data['tglSelesai'],
+            WaktuSelesaiOnline: data['waktuSelesaiOnline'],
+            UjianMulai: data['ujianMulai'],
+            UjianSelesai: data['ujianSelesai'],
+            JamUjianMulai: data['jamUjianMulai'],
+            JamUjianSelesai: data['jamUjianSelesai'],
+            PengumumanMulai:  data['pMulai'],
+            PengumumanSelesai:  data['pSelesai'],
+            BayarMulai: data['bayarMulai'],
+            BayarSelesai: data['bayarSelesai'],
+            TelitiBayarProdi: data['tBayarProdi'],
+            NA: data['Y'] ? 'Y' : 'N',
+            NomorPengumuman: data['noP'],
+            NomorSuket: data['noSuket'],
+        },
+        headers: {
+            username: username,
+            token: token
+        }
+    }).then((response) => response.data);
+    return response;
+}
+
+controller.deletePeriode = function (username, token, id) {
+    const response = axios({
+        method: 'delete',
+        url: `https://prototipe.unpas.ac.id/situ/api/public/api-v1/modul/pmb/mst-pmb/gelombang/${id}`,
+        headers: {
+            username: username,
+            token: token
+        }
+    }).then((response) => response.data);
+    return response;
+}
+// End Periode API
+
+// Komponen USM API
+controller.getAllKomponenUSM = function (username, token, page) {
+    const response = axios({
+        method: 'get',
+        url: `https://prototipe.unpas.ac.id/situ/api/public/api-v1/modul/pmb/usm?page=${page}`,
+        headers: {
+            username: username,
+            token: token
+        }
+    }).then((response) => response.data);
+    return response;
+}
+
+controller.deleteKomponenUSM = function (username, token, id) {
+    const response = axios({
+        method: 'delete',
+        url: `https://prototipe.unpas.ac.id/situ/api/public/api-v1/modul/pmb/usm/${id}`,
+        headers: {
+            username: username,
+            token: token
+        }
+    }).then((response) => response.data);
+    return response;
+}
+
+// End Komponen USM API
+
+// OPMB API
+controller.getAllOpmb = function (username, token, page) {
+    const response = axios({
+        method: 'get',
+        url: `https://prototipe.unpas.ac.id/situ/api/public/api-v1/modul/pmb/mst/opmb?page=${page}`,
+        headers: {
+            username: username,
+            token: token
+        }
+    }).then((response) => response.data);
+    return response;
+}
+
+controller.deleteOpmb = function (username, token, id) {
+    const response = axios({
+        method: 'delete',
+        url: `https://prototipe.unpas.ac.id/situ/api/public/api-v1/modul/pmb/mst/opmb/${id}`,
+        headers: {
+            username: username,
+            token: token
+        }
+    }).then((response) => response.data);
+    return response;
+}
+
 module.exports = controller;

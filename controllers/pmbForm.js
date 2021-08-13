@@ -1,24 +1,23 @@
 const axios = require('./axios');
-let session_store;
+
 exports.getPmbForm = (req, res, next) => {
-    if (typeof session_store === 'undefined') {
+    if (typeof req.session.username === 'undefined') {
       const resClient = axios.postClientAPI();
       resClient.then(dataClient => {
         const token = dataClient.data.client.token;
         const resUser = axios.postLoginUser(token);
-        session_store = req.session;
-        session_store.token = token;
+        req.session.token = token;
         resUser.then(dataUser => {
           const username = '000' + Object.values(dataUser)[2];
-          session_store.username = username;
+          req.session.username = username;
           inputFormData(username, token, '1', res, req)
         })
       }).catch(err => console.log(err))
     } else {  
       if (req.params.page) {
-        inputFormData(session_store.username, session_store.token, req.params.page, res, req)
+        inputFormData(req.session.username, req.session.token, req.params.page, res, req)
       } else {
-        inputFormData(session_store.username, session_store.token, '1', res, req)
+        inputFormData(req.session.username, req.session.token, '1', res, req)
       }
     }
     
@@ -41,7 +40,7 @@ inputFormData = (username, token, page, res, req) => {
       title: 'Setup PMB - PMB Formulir',
       dataForm: arr,
       data: [],
-      session: session_store,
+      session: req.session,
       links: links,
       message: req.flash('message'),
       layout: '../views/layouts/templates'
@@ -62,13 +61,13 @@ exports.addPmbForm = (req, res, next) => {
   data['kecualiProdi2'] = req.body.kecualiProdi2;
   data['hanyaProdi3'] = req.body.hanyaProdi3;
   data['kecualiProdi3'] = req.body.kecualiProdi3;
-  const resPostForm = axios.addFormulir(session_store.username, session_store.token, data);
-  console.log(session_store.username);
+  const resPostForm = axios.addFormulir(req.session.username, req.session.token, data);
+  console.log(req.session.username);
   console.log(req.body.Y);
 
   resPostForm.then(dataForm => {
     req.flash('message', Object.values(dataForm)[1]);
-    res.redirect('/setup-pmb');
+    res.redirect('/setup-pmb/form');
   }).catch(err => console.log(err))
 };
 
@@ -86,21 +85,21 @@ exports.editPmbForm = (req, res, next) => {
   data['kecualiProdi2'] = req.body.kecualiProdi2;
   data['hanyaProdi3'] = req.body.hanyaProdi3;
   data['kecualiProdi3'] = req.body.kecualiProdi3;
-  const resPostForm = axios.editFormulir(session_store.username, session_store.token, data, id);
+  const resPostForm = axios.editFormulir(req.session.username, req.session.token, data, id);
 
   resPostForm.then(dataForm => {
     req.flash('message', Object.values(dataForm)[1]);
-    res.redirect('/setup-pmb');
+    res.redirect('/setup-pmb/form');
   }).catch(err => console.log(err))
 };
 
 exports.deletePmbForm = (req, res, next) => {
   const id = req.params.id;
-  const resDeleteForm = axios.deleteFormulir(session_store.username, session_store.token, id);
+  const resDeleteForm = axios.deleteFormulir(req.session.username, req.session.token, id);
 
   resDeleteForm.then(data => {
     req.flash('message', Object.values(data)[1]);
-    res.redirect('/setup-pmb');
+    res.redirect('/setup-pmb/form');
   }).catch(err => console.log(err))
 };
 

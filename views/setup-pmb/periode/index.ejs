@@ -1,0 +1,424 @@
+<div class="main-body">
+  <div class="page-header">
+      <div class="row align-items-end" style="margin-bottom: 20px; margin-top: 30px; margin-left: 7px;">
+          <div class="col-lg-8">
+              <div class="page-header-breadcrumb">
+                  <h4>Setup PMB</h4>
+                  <ul class="breadcrumb-title">
+                      <li class="breadcrumb-item">
+                          <a href="..\..\index.php"><i class="fa fa-home"></i> Home</a>
+                      </li>
+                      <li class="breadcrumb-item"><a href="#!">Setup PMB</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-sm-12">
+          <!-- Material tab card start -->
+          <div class="card user-card">
+              <div class="card-block">
+
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-tabs md-tabs tabs-pmb">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/setup-pmb/form"></i>Harga Formulir</a>
+                        <div class="slide"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/setup-pmb/periode"></i>Periode</a>
+                        <div class="slide"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/setup-pmb/komponen-usm"></i>Komponen USM</a>
+                        <div class="slide"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="/setup-pmb/usm-umum" role="tab"></i>USM Umum</a>
+                        <div class="slide"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="/setup-pmb/usm-prodi" role="tab"></i>USM Prodi</a>
+                        <div class="slide"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="/setup-pmb/persyaratan" role="tab"></i>Persyaratan</a>
+                        <div class="slide"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="/setup-pmb/status-awal" role="tab"></i>Status Awal</a>
+                        <div class="slide"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="/setup-pmb/jenis-sekolah" role="tab"></i>Jenis Sekolah</a>
+                        <div class="slide"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="/setup-pmb/asal-sekolah" role="tab"></i>Asal Sekolah</a>
+                        <div class="slide"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="/setup-pmb/perguruan-tinggi" role="tab"></i>Perguruan Tinggi</a>
+                        <div class="slide"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="/setup-pmb/pengawas" role="tab"></i>Pengawas</a>
+                        <div class="slide"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/setup-pmb/opmb"></i>OPMB</a>
+                        <div class="slide"></div>
+                    </li>
+                </ul>
+                  <div class="tab-content card-block">
+                      <div class="tab-pane active" id="periode" role="tabpanel">
+                          <% if(messagePeriode != ''){ %>
+                            <div class="alert alert-success" role="alert">
+                                Pesan : <strong><%- messagePeriode %></strong> 
+                            </div>
+                          <% } %>
+                          <div class="dt-responsive table-responsive">
+                              <div class="dt-buttons"><a class="btn dt-button waves-effect" data-toggle="modal" data-target="#tambahPeriode" aria-controls="custom-btn" href="#"><span><i class="fa fa-plus-square"></i> TAMBAH PERIODE</span></a></div>
+
+                              <!-- Modal PERIODE-->
+
+                              <div class="modal fade" id="tambahPeriode" tabindex="-1" role="dialog">
+                                  <div class="modal-dialog modal-lg" role="document">
+                                      <div class="modal-content">
+                                          <div class="panel-heading bg-primary" style="margin-bottom: 0px;">
+                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                  <span aria-hidden="true"><i class="fa fa-times"></i></span>
+                                              </button>
+                                              <h5 style="text-align: center;"><i class="fa fa-clipboard"></i> TAMBAH PERIODE</h5>
+                                          </div>
+                                          <div class="modal-body">
+                                            <form action="/setup-pmb/periode" method="post">
+                                              <div class="row m-b-20">
+                                                  <div class="col-sm-12 col-lg-6">
+                                                      <div class="form-group row">
+                                                          <label class="col-sm-4 col-form-label">Kode Periode</label>
+                                                          <div class="col-sm-4">
+                                                              <input type="text" class="form-control" name="kodeP" value="20213" readonly="">
+                                                          </div>
+                                                      </div>
+
+                                                      <div class="form-group row">
+                                                          <label class="col-sm-4 col-form-label">Nama Periode</label>
+                                                          <div class="col-sm-8">
+                                                              <input type="text" class="form-control" name="namaP" placeholder="Masukkan Nama Periode...">
+                                                          </div>
+                                                      </div>
+
+                                                      <div class="form-group row">
+                                                          <label class="col-sm-4 col-form-label">Status</label>
+                                                          <div class="col-sm-8">
+                                                              <div class="form-radio">
+
+                                                                    <div class="radio radio-inline">
+                                                                        <label>
+                                                                            <input type="radio" name="NAP" value="Y" checked="checked">
+                                                                            <i class="helper"></i>Aktif
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="radio radio-inline">
+                                                                        <label>
+                                                                            <input type="radio" name="NAP" value="N">
+                                                                            <i class="helper"></i>Tidak Aktif
+                                                                        </label>
+                                                                    </div>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+
+                                                      <h4 class="sub-title">PENDAFTARAN</h4>
+                                                      <div class="form-group row">
+                                                          <label class="col-sm-4 col-form-label">Tgl Mulai</label>
+                                                          <div class="col-sm-8">
+                                                              <input type="date" name="tglMulai" class="form-control" value="Bln-Tgl-Thn">
+                                                          </div>
+                                                      </div>
+
+                                                      <div class="form-group row">
+                                                          <label class="col-sm-4 col-form-label">Tgl Selesai</label>
+                                                          <div class="col-sm-8">
+                                                              <input type="date" name="tglSelesai" class="form-control" value="Bln/Tgl/Thn">
+                                                          </div>
+                                                      </div>
+
+                                                      <h4 class="sub-title">UJIAN SARINGAN MASUK</h4>
+                                                      <div class="form-group row">
+                                                          <label class="col-sm-4 col-form-label">Tgl Mulai</label>
+                                                          <div class="col-sm-8">
+                                                              <input type="date" name="ujianMulai" class="form-control" value="Bln/Tgl/Thn">
+                                                          </div>
+                                                      </div>
+
+                                                      <div class="form-group row">
+                                                          <label class="col-sm-4 col-form-label">Tgl Selesai</label>
+                                                          <div class="col-sm-8">
+                                                              <input type="date" name="ujianSelesai" class="form-control" value="Bln/Tgl/Thn">
+                                                          </div>
+                                                      </div>
+                                                  </div>
+
+                                                  <div class="col-sm-12 col-lg-6">
+                                                      <h4 class="sub-title">PENGUMUMAN KELULUSAN</h4>
+                                                      <div class="form-group row">
+                                                          <label class="col-sm-4 col-form-label">Tgl Mulai</label>
+                                                          <div class="col-sm-8">
+                                                              <input type="date" name="pMulai" class="form-control" value="Bln/Tgl/Thn">
+                                                          </div>
+                                                      </div>
+
+                                                      <div class="form-group row">
+                                                          <label class="col-sm-4 col-form-label">Tgl Selesai</label>
+                                                          <div class="col-sm-8">
+                                                              <input type="date" name="pSelesai" class="form-control" value="Bln/Tgl/Thn">
+                                                          </div>
+                                                      </div>
+
+                                                      <div class="form-group row">
+                                                          <label class="col-sm-4 col-form-label">Nomor Pengumuman</label>
+                                                          <div class="col-sm-8">
+                                                              <input type="text" name="noP" class="form-control" placeholder="Masukkan Nomor Pengumuman...">
+                                                          </div>
+                                                      </div>
+
+                                                      <div class="form-group row">
+                                                          <label class="col-sm-4 col-form-label">Nomor Tanda Lulus</label>
+                                                          <div class="col-sm-8">
+                                                              <input type="text" name="noSuket" class="form-control" placeholder="Masukkan Nomor Tanda Lulus...">
+                                                          </div>
+                                                      </div>
+
+                                                      <h4 class="sub-title">PEMBAYARAN DAN PENDAFTARAN ULANG</h4>
+                                                      <div class="form-group row">
+                                                          <label class="col-sm-3 col-form-label">Tgl Mulai</label>
+                                                          <div class="col-sm-9">
+                                                              <input type="date" name="bayarMulai" class="form-control" value="Bln/Tgl/Thn">
+                                                          </div>
+                                                      </div>
+
+                                                      <div class="form-group row">
+                                                          <label class="col-sm-3 col-form-label">Tgl Selesai</label>
+                                                          <div class="col-sm-9">
+                                                              <input type="date" name="bayarSelesai" class="form-control" value="Bln/Tgl/Thn">
+                                                          </div>
+                                                      </div>
+
+                                                      <div class="form-group row">
+                                                          <label class="col-sm-3">Terapkan Pada Prodi</label>
+                                                          <div class="col-sm-9">
+                                                              <td class="ul">
+                                                                  <input type="checkbox" name="tBayatProdi" value="301"> 301 - Teknik Kimia
+                                                                  <br>
+                                                                  <input type="checkbox" name="tBayatProdi" value="302"> 302 - Teknologi Pertambangan
+                                                                  <br>
+                                                                  <input type="checkbox" name="tBayatProdi" value="303"> 303 - Teknik Sipil
+                                                                  <br>
+                                                                  <input type="checkbox" name="tBayatProdi" value="304"> 304 - Teknik Informatika
+                                                                  <br>
+                                                                  <input type="checkbox" name="tBayatProdi" value="305"> 305 - Teknik Lingkungan
+                                                                  <br>
+                                                                  <input type="checkbox" name="tBayatProdi" value="306"> 306 - Perencanaan Wilayah dan Kota
+                                                                  <br>
+                                                                  <input type="checkbox" name="tBayatProdi" value="444" checked=""> 444 - Prodi Tes
+                                                                  <br>
+                                                              </td>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                              <div class="modal-footer">
+                                                  <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">BATAL</button>
+                                                  <button type="submit" class="btn btn-primary">SIMPAN</button>
+                                              </div>
+                                            </form>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <!-- END Modal PERIODE-->
+                              <table id="button-select" class="table table-striped table-bordered nowrap dataTable" role="grid" aria-describedby="button-select_info" style="text-align: center;">
+                                  <thead>
+                                      <tr role="row">
+                                          <th tabindex="0" aria-controls="button-select" rowspan="2" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 50px; text-align: center;">
+                                              NO
+                                          </th>
+                                          <th tabindex="0" aria-controls="button-select" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 50px; text-align: center;">
+                                              KODE
+                                          </th>
+                                          <th tabindex="0" aria-controls="button-select" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 50px; text-align: center;">
+                                              NAMA PERIODE
+                                          </th>
+                                          <th tabindex="0" aria-controls="button-select" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 50px; text-align: center;">
+                                              TGL PENDAFTARAN
+                                          </th>
+                                          <th tabindex="0" aria-controls="button-select" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 50px; text-align: center;">
+                                              TGL UJIAN
+                                          </th>
+                                          <th tabindex="0" aria-controls="button-select" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 50px; text-align: center;">
+                                              TGL PENGUMUMAN
+                                          </th>
+                                          <th tabindex="0" aria-controls="button-select" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 50px; text-align: center;">
+                                              TGL BAYAR
+                                          </th>
+                                          <th tabindex="0" aria-controls="button-select" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 50px; text-align: center;">
+                                              AKSI
+                                          </th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                    <% let no = 1; %> 
+                                    <% dataPeriode.forEach((val) => { %>
+                                      <tr role="row" class="odd">
+                                          <td style="white-space: nowrap; width: 1%;"><%- no++ %></td>
+                                          <td><%- val['PMBPeriodID'] %></td>
+                                          <td><%- val['Nama'] %></td>
+                                          <td style="white-space: nowrap; width: 1%;">
+                                            <%- val['TglMulai'].split(' ')[0] %> sd <%- val['TglSelesai'].split(' ')[0] %>
+                                          </td>
+                                          <td style="white-space: nowrap; width: 1%;">
+                                            <%- val['UjianMulai'] %> sd <%- val['UjianSelesai'] %>
+                                          </td>
+                                          <td style="white-space: nowrap; width: 1%;">
+                                            <%- val['PengumumanMulai'].split(' ')[0] %> sd <%- val['PengumumanSelesai'].split(' ')[0] %>
+                                          </td>
+                                          <td style="white-space: nowrap; width: 1%;">
+                                            <%- val['BayarMulai'] %> sd <%- val['BayarSelesai'] %>
+                                          </td>
+                                          <td style="white-space: nowrap; width: 1%;">
+                                              <div class="tabledit-toolbar btn-toolbar" style="text-align: left;" align="center">
+                                                <a class="btn btn-danger waves-effect waves-light" data-toggle="modal" data-target="#hapusPeriodePMB<%= val['PMBPeriodID'] %>" aria-controls="custom-btn" href="#"><span class="icofont icofont-ui-delete"></span></a></div>
+
+                                                <!-- Modal Hapus Periode -->
+                                                <div class="modal fade" id="hapusPeriodePMB<%= val['PMBPeriodID'] %>" tabindex="-1" role="dialog">
+                                                    <div class="modal-dialog modal-lg" role="document">
+                                                        <div class="modal-content">
+                                                          <div class="panel-heading bg-danger" style="margin-bottom: 0px;">
+                                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                  <span aria-hidden="true"><i class="fa fa-times"></i></span>
+                                                              </button>
+                                                              <h5 style="text-align: center;"><i class="fa fa-clipboard"></i> HAPUS PERIODE PMB</h5>
+                                                          </div>
+                                                          <div class="modal-body text-center">
+                                                              <p>Apakah Anda yakin ingin menghapus Periode PMB ini?</p>
+                                                          </div>
+                                                      
+                                                          <div class="modal-footer">
+                                                              <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Batal</button>
+                                                              <a href="/setup-pmb/periode/delete/<%= val['PMBPeriodID'] %>" class="btn btn-danger">Hapus</a>
+                                                          </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- End Modal Hapus -->
+                                              </div>
+                                          </td>
+                                      </tr>
+                                    <% }); %>
+                                  </tbody>
+                              </table>
+
+                              <ul class="pagination">
+                                <% links.forEach((val) => { %>
+                                    <% if(val['label'] == 'pagination.next') { %>
+                                    <a class="page-link" href="<%- val['url'] %>" aria-label="Next">
+                                        <span aria-hidden="true">»</span>
+                                        <span class="sr-only">Next</span>
+                                    </a>  
+                                    <% } else if (val['label'] == 'pagination.previous') { %>
+                                    <li class="page-item">
+                                        <a class="page-link" href="<%- val['url'] %>" aria-label="Next">
+                                            <span aria-hidden="true">«</span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                    </li>
+                                    <% } else { %>
+                                    <li class="page-item <%- val['active'] ? 'active' : '' %>">
+                                        <a class="page-link" href="/setup-pmb/periode/<%- val['label'] %>"><%- val['label'] %>
+                                        </a>
+                                    </li>
+                                    <% }; %>
+                                <% }); %>
+                              </ul>
+
+                          </div>
+                      </div>
+                  </div>
+                  <!-- Row end -->
+              </div>
+              <!-- Row end -->
+          </div>
+      </div>
+
+
+      <div class="md-modal md-effect-1" id="resetPasswordPMB">
+          <div class="md-content">
+
+              <h3 class="text-center" style="background: #01a9ac;"><i class="fa fa-refresh"></i> UBAH PASSWORD</h3>
+
+              <div class="row m-b-20">
+
+                  <div class="col-sm-12 col-lg-4">
+                      <img class="img-fluid logoUnpas" src="..\..\foundations\adminity\assets\images\Logo-unpas.png" alt="round-img">
+                      <h4 class="text-center" style="margin-top: 12px; margin-bottom: 15px;">PMB UNPAS</h4>
+                  </div>
+
+                  <div class="col-sm-12 col-lg-8">
+
+                      <div class="form-group form-primary">
+                          <input type="password" name="password" class="form-control" required="" id="inputPasswordLama" placeholder="Masukkan Password Lama...">
+                          <span class="form-bar"></span>
+                      </div>
+
+                      <div class="form-group form-primary">
+                          <input type="password" name="password" class="form-control" required="" id="inputPasswordBaru" placeholder="Masukkan Password Baru...">
+                          <span class="form-bar"></span>
+                      </div>
+
+                      <div class="form-group form-primary">
+                          <input type="password" name="password" class="form-control" required="" id="konfirmasiPassword" placeholder="Konfirmasi Password Baru...">
+                          <span class="form-bar"></span>
+                      </div>
+
+                      <div class="row m-t-25 text-left">
+                          <div class="col-12">
+                              <div class="checkbox-fade fade-in-primary">
+                                  <label>
+                                      <input type="checkbox" value="" onclick="myFunctionUbahPassword()">
+                                      <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                      <span class="text-inverse">Tampilkan Password</span>
+                                  </label>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="row m-t-30">
+                          <div class="col-md-12">
+
+                              <button type="button" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20 ubah-password" data-dismiss="md-modal" aria-label="Close" onclick="_gaq.push(['_trackEvent', 'example', 'try', 'ubah-password']);">
+                                  <h5>UBAH PASSWORD</h5>
+                              </button>
+
+                              <button type="button" class="btn btn-secondary mobtn btn-md btn-block waves-effect text-center m-b-20 md-close">
+                                  <h5>KEMBALI</h5>
+                              </button>
+
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+
+          </div>
+      </div>
+      <div class="md-overlay"></div>
+
+      <!-- Material tab card end -->
+
+  </div>
+</div>
